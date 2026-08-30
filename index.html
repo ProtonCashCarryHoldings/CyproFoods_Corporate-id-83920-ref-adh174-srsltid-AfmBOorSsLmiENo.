@@ -2,290 +2,841 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyprofoods Corporate</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <title>About Us – Cyprofood Cash & Carry</title>
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #000;
-            background: #fff;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Top black banner */
-        .top-banner {
-            background: #000;
-            color: #fff;
-            width: 100%;
-            padding: 25px 20px;
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.6;
+    }
 
-        /* Logo section */
-        .logo-section {
-            text-align: center;
-            padding: 45px 20px 35px;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .logo-box {
-            width: 300px;
-            height: 130px;
-            border: 2px solid #000;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            color: #555;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        .company-subtitle {
-            font-size: 20px;
-            font-weight: 500;
-        }
+    /* =========================
+       TOP BAR
+    ========================= */
 
-        /* Explore companies section */
-        .explore-section {
-            text-align: center;
-            padding: 20px;
-        }
+    .top-bar {
+      background: #111;
+      color: #fff;
+      padding: 9px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
 
-        .explore-button {
-            display: inline-block;
-            background: #f58220;
-            color: #fff;
-            padding: 18px 35px;
-            border-radius: 12px;
-            font-size: 21px;
-            font-weight: bold;
-        }
+    .top-bar a {
+      margin-left: 20px;
+    }
 
-        /* Space for future logos */
-        .company-logos {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 45px;
-            min-height: 150px;
-        }
+    /* =========================
+       HEADER
+    ========================= */
 
-        .future-logo {
-            width: 140px;
-            height: 100px;
-            border: 2px dashed #ccc;
-            border-radius: 8px;
-        }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
 
-        /* About section */
-        .about-section {
-            display: flex;
-            width: 100%;
-            margin-top: 40px;
-        }
+    .header-main {
+      max-width: 1400px;
+      margin: auto;
+      padding: 22px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
 
-        .about-text {
-            width: 50%;
-            padding: 50px;
-        }
+    .logo {
+      font-size: 30px;
+      font-weight: 900;
+      color: #168b42;
+      letter-spacing: -1px;
+    }
 
-        .about-text h2 {
-            font-size: 32px;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
+    .logo span {
+      color: #e32929;
+    }
 
-        .about-text p {
-            font-size: 17px;
-            line-height: 1.7;
-            margin: 0;
-        }
+    .search {
+      flex: 1;
+      max-width: 600px;
+      position: relative;
+    }
 
-        /* Picture placeholder */
-        .about-image {
-            width: 50%;
-            background: #f58220;
-            min-height: 420px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 20px;
-        }
+    .search input {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 15px;
+      outline: none;
+    }
 
-        /* Bottom information */
-        .bottom-section {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            padding: 55px;
-        }
+    .search button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 50px;
+      border: none;
+      background: #168b42;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
 
-        .orange-square {
-            width: 150px;
-            height: 150px;
-            background: #f58220;
-            border-radius: 15px;
-            flex-shrink: 0;
-        }
+    .header-actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 14px;
+    }
 
-        .address {
-            font-size: 17px;
-            line-height: 1.6;
-        }
+    .header-actions div {
+      cursor: pointer;
+    }
 
-        .address strong {
-            display: block;
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
+    /* =========================
+       NAVIGATION
+    ========================= */
 
-        .website-link {
-            margin-left: auto;
-        }
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
 
-        .website-link a {
-            color: #f58220;
-            font-size: 19px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+    }
 
-        .website-link a:hover {
-            text-decoration: underline;
-        }
+    .nav-container > a,
+    .dropdown > a {
+      display: block;
+      padding: 17px 15px;
+      font-size: 14px;
+      font-weight: 600;
+    }
 
-        /* Mobile version */
-        @media (max-width: 800px) {
+    .nav-container > a:hover,
+    .dropdown > a:hover {
+      color: #168b42;
+    }
 
-            .top-banner {
-                font-size: 25px;
-            }
+    .dropdown {
+      position: relative;
+    }
 
-            .about-section {
-                flex-direction: column;
-            }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 230px;
+      background: #fff;
+      box-shadow: 0 5px 20px rgba(0,0,0,.12);
+      z-index: 100;
+    }
 
-            .about-text,
-            .about-image {
-                width: 100%;
-            }
+    .dropdown-menu a {
+      display: block;
+      padding: 11px 16px;
+      font-size: 14px;
+    }
 
-            .about-text {
-                padding: 35px 25px;
-            }
+    .dropdown-menu a:hover {
+      background: #f5f5f5;
+      color: #168b42;
+    }
 
-            .about-image {
-                min-height: 300px;
-            }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
 
-            .bottom-section {
-                flex-wrap: wrap;
-                padding: 35px 25px;
-            }
+    /* =========================
+       HERO
+    ========================= */
 
-            .website-link {
-                margin-left: 0;
-                width: 100%;
-                margin-top: 15px;
-            }
-        }
-    </style>
+    .page-hero {
+      height: 300px;
+      background:
+        linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.42)),
+        url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1800&q=80")
+        center / cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .page-hero h1 {
+      font-size: 50px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      max-width: 1150px;
+      margin: auto;
+      padding: 75px 25px;
+      text-align: center;
+    }
+
+    .small-title {
+      color: #168b42;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .about h2 {
+      font-size: 38px;
+      margin-bottom: 30px;
+      font-weight: 800;
+    }
+
+    .about p {
+      max-width: 1000px;
+      margin: 0 auto 18px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .features {
+      background: #f5f7f5;
+      padding: 70px 5%;
+    }
+
+    .feature-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      background: #fff;
+      padding: 35px 20px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
+      transition: transform .2s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: #168b42;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .feature h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .feature p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* =========================
+       SHOP
+    ========================= */
+
+    .shop {
+      max-width: 1150px;
+      margin: auto;
+      padding: 75px 25px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-top: 5px;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .shop-card {
+      min-height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      background: #168b42;
+      color: white;
+      font-weight: 700;
+      border-radius: 6px;
+      transition: .2s;
+    }
+
+    .shop-card:hover {
+      background: #106c32;
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #151515;
+      color: #fff;
+      padding: 60px 5% 25px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 45px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 900;
+      color: #32a95d;
+      margin-bottom: 15px;
+    }
+
+    .footer-column h3 {
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #bbb;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a:hover {
+      color: #fff;
+    }
+
+    .footer-about {
+      color: #aaa;
+      font-size: 14px;
+      max-width: 330px;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 45px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #888;
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    .mobile-menu {
+      display: none;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+
+      .header-main {
+        flex-wrap: wrap;
+      }
+
+      .search {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+      }
+
+      .nav-container {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .top-bar {
+        font-size: 12px;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .header-actions {
+        gap: 10px;
+      }
+
+      .page-hero {
+        height: 220px;
+      }
+
+      .page-hero h1 {
+        font-size: 36px;
+      }
+
+      .about {
+        padding: 50px 20px;
+      }
+
+      .about h2 {
+        font-size: 28px;
+      }
+
+      .feature-grid,
+      .shop-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        padding: 50px 20px;
+      }
+
+      .shop {
+        padding: 50px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Top black banner -->
-    <div class="top-banner">
-        Cyprofoods Corporate
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>
+      Wholesale & Cash & Carry
     </div>
 
-    <!-- CyproFoods logo -->
-    <section class="logo-section">
+    <div>
+      <a href="tel:02088010101">020 8801 0101</a>
+      <a href="#">Brantwood Road, Unit B, N17 0DX</a>
+    </div>
+  </div>
 
-        <div class="logo-box">
-            CyproFoods Logo
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="header-main">
+
+      <a href="#" class="logo">
+        CYPRO<span>FOOD</span>
+      </a>
+
+      <div class="search">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="I'm searching for..."
+        >
+
+        <button onclick="searchProducts()">
+          🔍
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <div>👤 Log In</div>
+        <div>♡ Wishlist</div>
+        <div>🛒 Cart <span id="cartCount">0</span></div>
+      </div>
+
+      <div class="mobile-menu" onclick="toggleMenu()">
+        ☰
+      </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <nav id="navigation">
+      <div class="nav-container">
+
+        <div class="dropdown">
+          <a href="#">Fresh Produce ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Fruits</a>
+            <a href="#">Vegetables</a>
+            <a href="#">Fresh Herbs</a>
+            <a href="#">Dry Fruit & Nuts</a>
+          </div>
         </div>
 
-        <div class="company-subtitle">
-            A Proton Cash and Carry Company
+        <div class="dropdown">
+          <a href="#">Frozen ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Potato & Chips</a>
+            <a href="#">Bread & Pizza & Snacks</a>
+            <a href="#">Meat & Poultry</a>
+            <a href="#">Pies & Pastries</a>
+            <a href="#">Vegetable & Fruit</a>
+            <a href="#">Seafood</a>
+            <a href="#">Ice Cream</a>
+          </div>
         </div>
 
-    </section>
-
-    <!-- Explore Proton companies -->
-    <section class="explore-section">
-
-        <div class="explore-button">
-            Explore Proton Cash and Carry Companies
+        <div class="dropdown">
+          <a href="#">Chilled ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Dairy</a>
+            <a href="#">Cheese</a>
+            <a href="#">Butter & Spreads</a>
+            <a href="#">Fresh Milk & Creams</a>
+            <a href="#">Yoghurt</a>
+            <a href="#">Eggs</a>
+            <a href="#">Meat & Poultry</a>
+          </div>
         </div>
 
-        <!-- Five spaces for future company logos -->
-        <div class="company-logos">
-            <div class="future-logo"></div>
-            <div class="future-logo"></div>
-            <div class="future-logo"></div>
-            <div class="future-logo"></div>
-            <div class="future-logo"></div>
+        <div class="dropdown">
+          <a href="#">Grocery ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Bakery</a>
+            <a href="#">Confectionery & Snacks</a>
+            <a href="#">Dried Foods</a>
+            <a href="#">Pasta & Noodles</a>
+            <a href="#">Herbs & Spices</a>
+            <a href="#">Oil</a>
+            <a href="#">Sauces & Dressing</a>
+          </div>
         </div>
 
-    </section>
-
-    <!-- About Us -->
-    <section class="about-section">
-
-        <div class="about-text">
-
-            <h2>About us</h2>
-
-            <p>
-                At CyproFoods we have a long standing culture of respect and
-                continuous improvement, which shines through in the foods we
-                supply and our customer service. Ever since we were established
-                in 2007 we knew that employees are central to the operation of
-                all businesses, which is why we provide excellent employee
-                benefits such as a 35% discount on short-dated products and a
-                45 minute lunch break. In 2016 we entered our second iteration,
-                where we improved many aspects of the store, including checkout,
-                stock management software and layout. Relationships in the
-                community are key to our operations, we have close ties with
-                many catering companies and restaurants in the local area.
-            </p>
-
+        <div class="dropdown">
+          <a href="#">Drinks ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Cold Beverages</a>
+            <a href="#">Soft Drinks</a>
+            <a href="#">Juices</a>
+            <a href="#">Energy & Sports Drinks</a>
+            <a href="#">Water</a>
+            <a href="#">Coffee</a>
+            <a href="#">Tea</a>
+          </div>
         </div>
 
-        <!-- Picture placeholder -->
-        <div class="about-image">
-            Picture goes here
+        <div class="dropdown">
+          <a href="#">Non-Food ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Cleaning & Household</a>
+            <a href="#">Food Packaging</a>
+            <a href="#">BBQ & Charcoals</a>
+            <a href="#">Pet Foods</a>
+          </div>
         </div>
 
-    </section>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
 
-    <!-- Address and website -->
-    <section class="bottom-section">
+      </div>
+    </nav>
 
-        <div class="orange-square"></div>
+  </header>
 
-        <div class="address">
-            <strong>Address</strong>
-            Industrial Estate, Unit B, Brantwood Road, N17 0DX
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>About Us</h1>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about">
+
+    <div class="small-title">
+      About Us
+    </div>
+
+    <h2>Cyprofood Cash & Carry</h2>
+
+    <p>
+      Established in 2007, Cyprofood Wholesale has grown to become a
+      leading supplier in the wholesale and cash & carry sector.
+      With a 5,000m² facility, a fleet of 40 delivery vehicles,
+      and a dedicated team of over 200 employees, we proudly serve
+      supermarkets, grocery stores, restaurants, and all types of
+      food service businesses.
+    </p>
+
+    <p>
+      At Cyprofood, we offer an extensive range of over 10,000 products,
+      covering everything from fresh produce and frozen goods to dry
+      foods, beverages, and essential kitchen supplies. Our fresh fruit
+      and vegetable section is one of the most comprehensive in the
+      industry, and our large frozen food selection ensures that
+      businesses have access to high-quality products at all times.
+    </p>
+
+    <p>
+      We are open 24/7, 365 days a year, providing a convenient
+      shopping experience for our customers. With a free customer
+      car park and a reliable delivery service, we make wholesale
+      shopping effortless and efficient. Whether you run a restaurant,
+      café, supermarket, or takeaway, Cyprofood is your trusted
+      partner for all your supply needs.
+    </p>
+
+  </section>
+
+
+  <!-- FEATURES -->
+  <section class="features">
+
+    <div class="feature-grid">
+
+      <div class="feature">
+        <div class="feature-icon">🕐</div>
+        <h3>Open 24/7 Hours</h3>
+        <p>Shop whenever you need us.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h3>Free Delivery</h3>
+        <p>Reliable delivery for your business.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📦</div>
+        <h3>Over 10,000 Products</h3>
+        <p>A huge range for every business.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🚗</div>
+        <h3>Free Car Park</h3>
+        <p>Convenient parking for customers.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SHOP -->
+  <section class="shop">
+
+    <div class="section-title">
+      <div class="small-title">Explore</div>
+      <h2>Shop</h2>
+    </div>
+
+    <div class="shop-grid">
+
+      <a class="shop-card" href="#">
+        Fresh Vegetables
+      </a>
+
+      <a class="shop-card" href="#">
+        Fizzy Drinks
+      </a>
+
+      <a class="shop-card" href="#">
+        Potato & Chips
+      </a>
+
+      <a class="shop-card" href="#">
+        Food Packaging
+      </a>
+
+      <a class="shop-card" href="#">
+        Bakery
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+
+        <div class="footer-logo">
+          CYPROFOOD
         </div>
 
-        <div class="website-link">
-            <a href="https://www.cyprofood.com/" target="_blank">
-                Explore our range
-            </a>
-        </div>
+        <p class="footer-about">
+          Cyprofood Cash & Carry is a wholesale food supplier
+          serving supermarkets, restaurants, takeaways and
+          food service businesses.
+        </p>
 
-    </section>
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Shop</h3>
+
+        <a href="#">Fresh Vegetables</a>
+        <a href="#">Fizzy Drinks</a>
+        <a href="#">Potato & Chips</a>
+        <a href="#">Food Packaging</a>
+        <a href="#">Bakery</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>About</h3>
+
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Become A Customer</a>
+        <a href="#">Vendor Application Form</a>
+        <a href="#">WhatsApp Announcement Channel</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Information</h3>
+
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">FAQ</a>
+        <a href="#">Modern Slavery Statement</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © Cyprofood Cash & Carry, Unit B, Brantwood Road, London N17 0DX
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    function searchProducts() {
+
+      const input =
+        document.getElementById("searchInput").value.trim();
+
+      if (input === "") {
+        alert("Please enter something to search.");
+        return;
+      }
+
+      alert("Searching for: " + input);
+    }
+
+
+    function toggleMenu() {
+
+      const nav =
+        document.getElementById("navigation");
+
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+
+    }
+
+
+    let cart = 0;
+
+    function addToCart() {
+
+      cart++;
+
+      document.getElementById("cartCount")
+        .textContent = cart;
+
+    }
+
+  </script>
 
 </body>
 </html>
