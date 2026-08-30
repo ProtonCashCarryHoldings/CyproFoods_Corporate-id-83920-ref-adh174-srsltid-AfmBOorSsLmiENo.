@@ -1,1 +1,292 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyprofoods Corporate</title>
 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+            background: #fff;
+        }
+
+        /* Top black banner */
+        .top-banner {
+            background: #000;
+            color: #fff;
+            width: 100%;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        /* Logo section */
+        .logo-section {
+            text-align: center;
+            padding: 45px 20px 35px;
+        }
+
+        .logo-box {
+            width: 300px;
+            height: 130px;
+            border: 2px solid #000;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .company-subtitle {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        /* Explore companies section */
+        .explore-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .explore-button {
+            display: inline-block;
+            background: #f58220;
+            color: #fff;
+            padding: 18px 35px;
+            border-radius: 12px;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        /* Space for future logos */
+        .company-logos {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 45px;
+            min-height: 150px;
+        }
+
+        .future-logo {
+            width: 140px;
+            height: 100px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+        }
+
+        /* About section */
+        .about-section {
+            display: flex;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            width: 50%;
+            padding: 50px;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Picture placeholder */
+        .about-image {
+            width: 50%;
+            background: #f58220;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        /* Bottom information */
+        .bottom-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 55px;
+        }
+
+        .orange-square {
+            width: 150px;
+            height: 150px;
+            background: #f58220;
+            border-radius: 15px;
+            flex-shrink: 0;
+        }
+
+        .address {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .address strong {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .website-link {
+            margin-left: auto;
+        }
+
+        .website-link a {
+            color: #f58220;
+            font-size: 19px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .website-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile version */
+        @media (max-width: 800px) {
+
+            .top-banner {
+                font-size: 25px;
+            }
+
+            .about-section {
+                flex-direction: column;
+            }
+
+            .about-text,
+            .about-image {
+                width: 100%;
+            }
+
+            .about-text {
+                padding: 35px 25px;
+            }
+
+            .about-image {
+                min-height: 300px;
+            }
+
+            .bottom-section {
+                flex-wrap: wrap;
+                padding: 35px 25px;
+            }
+
+            .website-link {
+                margin-left: 0;
+                width: 100%;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top black banner -->
+    <div class="top-banner">
+        Cyprofoods Corporate
+    </div>
+
+    <!-- CyproFoods logo -->
+    <section class="logo-section">
+
+        <div class="logo-box">
+            CyproFoods Logo
+        </div>
+
+        <div class="company-subtitle">
+            A Proton Cash and Carry Company
+        </div>
+
+    </section>
+
+    <!-- Explore Proton companies -->
+    <section class="explore-section">
+
+        <div class="explore-button">
+            Explore Proton Cash and Carry Companies
+        </div>
+
+        <!-- Five spaces for future company logos -->
+        <div class="company-logos">
+            <div class="future-logo"></div>
+            <div class="future-logo"></div>
+            <div class="future-logo"></div>
+            <div class="future-logo"></div>
+            <div class="future-logo"></div>
+        </div>
+
+    </section>
+
+    <!-- About Us -->
+    <section class="about-section">
+
+        <div class="about-text">
+
+            <h2>About us</h2>
+
+            <p>
+                At CyproFoods we have a long standing culture of respect and
+                continuous improvement, which shines through in the foods we
+                supply and our customer service. Ever since we were established
+                in 2007 we knew that employees are central to the operation of
+                all businesses, which is why we provide excellent employee
+                benefits such as a 35% discount on short-dated products and a
+                45 minute lunch break. In 2016 we entered our second iteration,
+                where we improved many aspects of the store, including checkout,
+                stock management software and layout. Relationships in the
+                community are key to our operations, we have close ties with
+                many catering companies and restaurants in the local area.
+            </p>
+
+        </div>
+
+        <!-- Picture placeholder -->
+        <div class="about-image">
+            Picture goes here
+        </div>
+
+    </section>
+
+    <!-- Address and website -->
+    <section class="bottom-section">
+
+        <div class="orange-square"></div>
+
+        <div class="address">
+            <strong>Address</strong>
+            Industrial Estate, Unit B, Brantwood Road, N17 0DX
+        </div>
+
+        <div class="website-link">
+            <a href="https://www.cyprofood.com/" target="_blank">
+                Explore our range
+            </a>
+        </div>
+
+    </section>
+
+</body>
+</html>
+```
