@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,7 +128,7 @@
             width: 84%;
             margin: 0 auto;
 
-            min-height: 135px;
+            min-height: 115px;
 
             display: flex;
             align-items: center;
@@ -137,8 +136,8 @@
 
             background: white;
 
-            padding-top: 25px;
-            padding-bottom: 25px;
+            padding-top: 6px;
+            padding-bottom: 6px;
         }
 
         .logo-container {
@@ -190,6 +189,7 @@
 
         .search-button {
             width: 52px;
+            height: 48px;
 
             border: none;
 
@@ -198,13 +198,27 @@
             border-radius: 0 7px 7px 0;
 
             cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0;
         }
 
         .search-button::before {
             content: "⌕";
+
             color: white;
-            font-size: 25px;
+
+            font-size: 26px;
             font-weight: bold;
+
+            line-height: 1;
+
+            display: block;
+
+            transform: translateY(-1px);
         }
 
 
@@ -238,21 +252,22 @@
 
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 9px;
         }
 
         .category:hover {
             color: #f7941d;
         }
 
-        /* Downward-facing arrow */
+        /* Wider downward-facing arrow */
+
         .category-arrow {
             display: inline-block;
 
-            font-size: 16px;
+            font-size: 19px;
             font-weight: bold;
 
-            transform: rotate(90deg);
+            transform: rotate(90deg) scaleX(1.35);
 
             line-height: 1;
         }
@@ -329,7 +344,8 @@
 
 
         /* =========================================
-           ABOUT FEATURE BULLETS
+           FOUR FEATURE BULLETS
+           1  2  3  4
         ========================================= */
 
         .features {
@@ -337,17 +353,22 @@
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                repeat(4, 1fr);
 
-            column-gap: 35px;
-            row-gap: 25px;
+            column-gap: 20px;
+
+            width: 100%;
         }
 
         .feature {
             display: flex;
-            align-items: center;
 
-            min-height: 55px;
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            min-width: 0;
         }
 
         .feature img {
@@ -356,14 +377,17 @@
 
             object-fit: contain;
 
-            flex-shrink: 0;
+            display: block;
 
-            margin-right: 18px;
+            margin-bottom: 12px;
         }
 
         .feature span {
             font-size: 14px;
+
             color: #777777;
+
+            line-height: 1.4;
         }
 
 
@@ -503,7 +527,7 @@
 
                 min-height: auto;
 
-                padding: 25px 0;
+                padding: 10px 0 20px 0;
 
                 flex-direction: column;
                 align-items: flex-start;
@@ -539,6 +563,21 @@
 
             .building-image {
                 height: 220px;
+            }
+
+            .features {
+                grid-template-columns: repeat(4, 1fr);
+
+                column-gap: 10px;
+            }
+
+            .feature img {
+                width: 38px;
+                height: 38px;
+            }
+
+            .feature span {
+                font-size: 12px;
             }
 
             .footer-links {
@@ -596,7 +635,18 @@
             }
 
             .features {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(4, 1fr);
+
+                column-gap: 6px;
+            }
+
+            .feature img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .feature span {
+                font-size: 10px;
             }
 
             .footer-links {
@@ -770,16 +820,18 @@
                 </p>
 
 
-                <!-- FEATURE BULLETS -->
+                <!-- FOUR FEATURES IN ONE ROW -->
 
                 <div class="features">
 
 
+                    <!-- IMAGE 4 -->
+
                     <div class="feature">
 
                         <img
-                            src="https://www.cyprofood.com/cdn/shop/files/001-truck.png?v=1739532766"
-                            alt="Delivery"
+                            src="https://www.cyprofood.com/cdn/shop/files/003-24-hours-support.png?v=1739532766"
+                            alt="Open 24/7"
                         >
 
                         <span>
@@ -788,6 +840,8 @@
 
                     </div>
 
+
+                    <!-- IMAGE 5 -->
 
                     <div class="feature">
 
@@ -803,6 +857,8 @@
                     </div>
 
 
+                    <!-- IMAGE 6 -->
+
                     <div class="feature">
 
                         <img
@@ -816,6 +872,8 @@
 
                     </div>
 
+
+                    <!-- IMAGE 7 -->
 
                     <div class="feature">
 
