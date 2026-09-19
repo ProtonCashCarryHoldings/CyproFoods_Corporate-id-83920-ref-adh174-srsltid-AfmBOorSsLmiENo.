@@ -8,6 +8,7 @@
     <title>Cyprofood Cash & Carry</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -23,9 +24,10 @@
             color: #111111;
         }
 
-        /* =========================
+
+        /* =========================================
            TOP BLACK BAR
-        ========================= */
+        ========================================= */
 
         .top-bar {
             height: 48px;
@@ -41,6 +43,9 @@
             padding-right: 5vw;
 
             overflow: hidden;
+
+            position: relative;
+            z-index: 2000;
         }
 
         .welcome-message {
@@ -103,22 +108,37 @@
         }
 
 
-        /* =========================
-           LOGO + SEARCH AREA
-        ========================= */
+        /* =========================================
+           LOGO + SEARCH
+        ========================================= */
+
+        .sticky-navigation {
+            position: sticky;
+            top: 0;
+
+            background: white;
+
+            z-index: 1000;
+
+            box-shadow: none;
+
+            border-bottom: none;
+        }
 
         .navigation-area {
             width: 84%;
             margin: 0 auto;
 
-            height: 135px;
+            min-height: 135px;
 
             display: flex;
             align-items: center;
             gap: 50px;
 
             background: white;
-            z-index: 100;
+
+            padding-top: 25px;
+            padding-bottom: 25px;
         }
 
         .logo-container {
@@ -131,6 +151,11 @@
             height: auto;
             display: block;
         }
+
+
+        /* =========================================
+           SEARCH BAR
+        ========================================= */
 
         .search-container {
             display: flex;
@@ -183,25 +208,9 @@
         }
 
 
-        /* =========================
-           STICKY SEARCH
-        ========================= */
-
-        .sticky-navigation {
-            position: sticky;
-            top: 0;
-
-            background: white;
-
-            z-index: 1000;
-
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
-
-        /* =========================
-           CATEGORY MENU
-        ========================= */
+        /* =========================================
+           CATEGORY ROW
+        ========================================= */
 
         .categories {
             width: 84%;
@@ -217,6 +226,8 @@
             gap: 48px;
 
             flex-wrap: wrap;
+
+            border-top: none;
         }
 
         .category {
@@ -224,21 +235,42 @@
             color: #222222;
             text-decoration: none;
             white-space: nowrap;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .category:hover {
             color: #f7941d;
         }
 
+        /* Downward-facing arrow */
+        .category-arrow {
+            display: inline-block;
 
-        /* =========================
-           IMAGE SECTION
-        ========================= */
+            font-size: 16px;
+            font-weight: bold;
+
+            transform: rotate(90deg);
+
+            line-height: 1;
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
 
         .main-content {
             width: 84%;
             margin: 0 auto;
         }
+
+
+        /* =========================================
+           IMAGES + ABOUT
+        ========================================= */
 
         .image-about-section {
             display: grid;
@@ -252,6 +284,7 @@
 
         .building-images {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
 
             gap: 15px;
@@ -269,9 +302,9 @@
         }
 
 
-        /* =========================
+        /* =========================================
            ABOUT SECTION
-        ========================= */
+        ========================================= */
 
         .about-section {
             padding-top: 0;
@@ -295,18 +328,156 @@
         }
 
 
-        /* =========================
-           EXTRA SPACING
-        ========================= */
+        /* =========================================
+           ABOUT FEATURE BULLETS
+        ========================================= */
 
-        .bottom-space {
-            height: 120px;
+        .features {
+            margin-top: 35px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            column-gap: 35px;
+            row-gap: 25px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+
+            min-height: 55px;
+        }
+
+        .feature img {
+            width: 45px;
+            height: 45px;
+
+            object-fit: contain;
+
+            flex-shrink: 0;
+
+            margin-right: 18px;
+        }
+
+        .feature span {
+            font-size: 14px;
+            color: #777777;
         }
 
 
-        /* =========================
+        /* =========================================
+           LIGHT GREY SECTION
+        ========================================= */
+
+        .grey-section {
+            background: #f5f5f5;
+
+            margin-top: 60px;
+
+            padding-top: 55px;
+            padding-bottom: 45px;
+
+            width: 100%;
+        }
+
+        .grey-inner {
+            width: 84%;
+            margin: 0 auto;
+        }
+
+
+        /* =========================================
+           DOTTED LINES
+        ========================================= */
+
+        .dotted-line {
+            width: 100%;
+
+            border-top: 2px dashed #bdbdbd;
+
+            height: 0;
+        }
+
+
+        /* =========================================
+           FOOTER LINKS
+        ========================================= */
+
+        .footer-links {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr 1fr;
+
+            column-gap: 80px;
+
+            margin-top: 55px;
+        }
+
+        .footer-column h2 {
+            margin: 0 0 20px 0;
+
+            font-size: 18px;
+
+            font-weight: 400;
+
+            color: #111111;
+        }
+
+        .footer-column ul {
+            list-style: none;
+
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 13px;
+        }
+
+        .footer-column a {
+            font-size: 14px;
+
+            line-height: 1.65;
+
+            color: #777777;
+
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            color: #f7941d;
+        }
+
+
+        /* =========================================
+           COPYRIGHT
+        ========================================= */
+
+        .copyright {
+            margin-top: 55px;
+
+            padding-top: 0;
+
+            font-size: 14px;
+
+            color: #777777;
+        }
+
+
+        /* =========================================
+           BOTTOM SPACE
+        ========================================= */
+
+        .bottom-space {
+            height: 80px;
+        }
+
+
+        /* =========================================
            MOBILE
-        ========================= */
+        ========================================= */
 
         @media (max-width: 900px) {
 
@@ -329,7 +500,8 @@
 
             .navigation-area {
                 width: 90%;
-                height: auto;
+
+                min-height: auto;
 
                 padding: 25px 0;
 
@@ -367,6 +539,16 @@
 
             .building-image {
                 height: 220px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr 1fr;
+
+                row-gap: 40px;
+            }
+
+            .grey-inner {
+                width: 90%;
             }
         }
 
@@ -412,6 +594,18 @@
             .about-section p {
                 font-size: 13px;
             }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-column h2 {
+                font-size: 18px;
+            }
         }
 
     </style>
@@ -421,9 +615,9 @@
 <body>
 
 
-    <!-- =========================
-         BLACK TOP BAR
-    ========================= -->
+    <!-- =========================================
+         TOP BLACK BAR
+    ========================================= -->
 
     <div class="top-bar">
 
@@ -446,15 +640,13 @@
     </div>
 
 
-    <!-- =========================
-         STICKY LOGO + SEARCH
-    ========================= -->
+    <!-- =========================================
+         LOGO + SEARCH
+    ========================================= -->
 
     <div class="sticky-navigation">
 
         <div class="navigation-area">
-
-            <!-- IMAGE 1: CYPROFOOD LOGO -->
 
             <div class="logo-container">
 
@@ -465,8 +657,6 @@
 
             </div>
 
-
-            <!-- SEARCH BOX -->
 
             <div class="search-container">
 
@@ -488,42 +678,48 @@
     </div>
 
 
-    <!-- =========================
-         CATEGORY MENU
-    ========================= -->
+    <!-- =========================================
+         CATEGORY ROW
+    ========================================= -->
 
     <nav class="categories">
 
         <a href="#" class="category">
             Fresh Produce
+            <span class="category-arrow">></span>
         </a>
 
         <a href="#" class="category">
             Frozen Chilled
+            <span class="category-arrow">></span>
         </a>
 
         <a href="#" class="category">
             Grocery
+            <span class="category-arrow">></span>
         </a>
 
         <a href="#" class="category">
             Drinks
+            <span class="category-arrow">></span>
         </a>
 
         <a href="#" class="category">
             Alcohol
+            <span class="category-arrow">></span>
         </a>
 
         <a href="#" class="category">
             Non-Food
+            <span class="category-arrow">></span>
         </a>
 
     </nav>
 
 
-    <!-- =========================
+    <!-- =========================================
          MAIN CONTENT
-    ========================= -->
+    ========================================= -->
 
     <main class="main-content">
 
@@ -535,16 +731,11 @@
 
             <div class="building-images">
 
-                <!-- IMAGE 2 -->
-
                 <img
                     class="building-image"
                     src="https://www.cyprofood.com/cdn/shop/files/cyprofood_DJI_0951.jpg?v=1739544425"
                     alt="Outside of Cyprofood"
                 >
-
-
-                <!-- IMAGE 3 -->
 
                 <img
                     class="building-image"
@@ -578,15 +769,251 @@
                     We are open 24/7, 365 days a year, providing a convenient shopping experience for our customers. With a free customer car park and a reliable delivery service, we make wholesale shopping effortless and efficient. Whether you run a restaurant, café, supermarket, or takeaway, Cyprofood is your trusted partner for all your supply needs.
                 </p>
 
-            </section>
 
+                <!-- FEATURE BULLETS -->
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <img
+                            src="https://www.cyprofood.com/cdn/shop/files/001-truck.png?v=1739532766"
+                            alt="Delivery"
+                        >
+
+                        <span>
+                            Open 24/7 Hours
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <img
+                            src="https://www.cyprofood.com/cdn/shop/files/001-truck.png?v=1739532766"
+                            alt="Free Delivery"
+                        >
+
+                        <span>
+                            Free Delivery
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <img
+                            src="https://www.cyprofood.com/cdn/shop/files/groceries.png?v=1739532889"
+                            alt="Products"
+                        >
+
+                        <span>
+                            Over 10.000 Products
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <img
+                            src="https://www.cyprofood.com/cdn/shop/files/parking.png?v=1739533042"
+                            alt="Parking"
+                        >
+
+                        <span>
+                            Free Car Park
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </section>
 
         </section>
 
-
-        <div class="bottom-space"></div>
-
     </main>
+
+
+    <!-- =========================================
+         LIGHT GREY SECTION
+    ========================================= -->
+
+    <section class="grey-section">
+
+        <div class="grey-inner">
+
+
+            <!-- FIRST DOTTED LINE -->
+
+            <div class="dotted-line"></div>
+
+
+            <!-- FOOTER LINKS -->
+
+            <div class="footer-links">
+
+
+                <!-- SHOP -->
+
+                <div class="footer-column">
+
+                    <h2>
+                        Shop
+                    </h2>
+
+                    <ul>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/collections/vegetables">
+                                Fresh Vegetables
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/collections/fizzy-drinks">
+                                Fizzy Drinks
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/collections/potato-chips">
+                                Potato &amp; Chips
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/collections/food-packaging">
+                                Food Packaging
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/collections/bakery">
+                                Bakery
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ABOUT -->
+
+                <div class="footer-column">
+
+                    <h2>
+                        About
+                    </h2>
+
+                    <ul>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/pages/about-us">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/pages/contact">
+                                Contact Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.net/account/register">
+                                Become A Customer
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/pages/supply-us">
+                                Vendor Application Form
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://chat.whatsapp.com/FPJGgJez5kaKiwuvty8b7r">
+                                Whatsapp Announcement Channel
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- INFORMATION -->
+
+                <div class="footer-column">
+
+                    <h2>
+                        Information
+                    </h2>
+
+                    <ul>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/policies/terms-of-service">
+                                Terms &amp; Conditions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/policies/privacy-policy">
+                                Privacy Policiy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.cyprofood.com/pages/faq">
+                                FAQ
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://cdn.shopify.com/s/files/1/0730/1837/6472/files/Modern-Slavery-Statement_Cyprofood_March_2025.pdf?v=1751450618">
+                                Modern Slavery Statement
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- SECOND DOTTED LINE -->
+
+            <div
+                class="dotted-line"
+                style="margin-top: 55px;">
+            </div>
+
+
+            <!-- COPYRIGHT -->
+
+            <div class="copyright">
+
+                © Cyprofood Cash &amp; Carry, Unit B, Brantwood Road, London N17 0DX
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <div class="bottom-space"></div>
 
 
 </body>
