@@ -78,6 +78,8 @@
             display: flex;
             align-items: center;
             gap: 30px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 8px;
         }
 
         .logo-container {
@@ -182,30 +184,107 @@
         .category-row {
             width: 84%;
             margin: 0 auto;
-            min-height: 60px;
+            min-height: 54px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 42px;
-            border-top: none;
+            gap: 38px;
+            border-top: 1px solid #e5e5e5;
+            position: relative;
+            z-index: 20;
+        }
+
+        .category-item {
+            position: relative;
+            height: 54px;
+            display: flex;
+            align-items: center;
         }
 
         .category {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 9px;
             color: #222;
             text-decoration: none;
             font-size: 14px;
             white-space: nowrap;
+            height: 54px;
+            cursor: pointer;
         }
 
+        /* =========================
+           DOWN ARROW / V
+        ========================= */
+
         .category-arrow {
-            font-size: 22px;
-            font-weight: 400;
-            display: inline-block;
-            transform: rotate(90deg);
-            line-height: 1;
+            width: 8px;
+            height: 8px;
+            border-right: 1.7px solid #222;
+            border-bottom: 1.7px solid #222;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+            margin-top: -4px;
+        }
+
+        .category-item:hover .category-arrow,
+        .category-item:focus-within .category-arrow {
+            transform: rotate(225deg);
+            margin-top: 4px;
+        }
+
+        /* =========================
+           DROPDOWN MENUS
+        ========================= */
+
+        .dropdown-menu {
+            position: absolute;
+            top: 51px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            width: 235px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 10px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+        .category-item:hover .dropdown-menu,
+        .category-item:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 9px 18px;
+            color: #222;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.35;
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                padding-left 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f7f7f7;
+            color: #f7941d;
+            padding-left: 22px;
         }
 
         /* =========================
@@ -362,7 +441,6 @@
                 width: 90%;
                 gap: 18px;
                 flex-wrap: wrap;
-                padding: 10px 0;
             }
 
             .logo-container {
@@ -388,7 +466,21 @@
                 gap: 22px;
                 overflow-x: auto;
                 justify-content: flex-start;
-                padding: 8px 0;
+                padding: 0;
+            }
+
+            .category-item {
+                flex-shrink: 0;
+            }
+
+            .dropdown-menu {
+                left: 0;
+                transform: translateY(-10px);
+            }
+
+            .category-item:hover .dropdown-menu,
+            .category-item:focus-within .dropdown-menu {
+                transform: translateY(0);
             }
 
             .main-content {
@@ -474,9 +566,13 @@
 
     <!-- TOP BLACK BAR -->
     <div class="top-bar">
-        <div>Welcome to Cyprofood Cash and Carry</div>
+
+        <div>
+            Welcome to Cyprofood Cash and Carry
+        </div>
 
         <div class="top-bar-right">
+
             <div class="top-message" id="messageOne">
                 Free delivery over £200
             </div>
@@ -484,7 +580,9 @@
             <div class="top-message second" id="messageTwo">
                 Call us 020 8801 0101
             </div>
+
         </div>
+
     </div>
 
 
@@ -493,24 +591,31 @@
 
         <div class="navigation-area">
 
-            <!-- CYPROFOOD LOGO - IMAGE 1 -->
+            <!-- CYPROFOOD LOGO -->
             <div class="logo-container">
+
                 <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQi_6hEn1GJp8XZAgrStI5rqfacuM1GA7UBgTbGneKHKGSpaupdakWTTMk&s=10"
                     alt="Cyprofood Cash and Carry"
                 >
+
             </div>
+
 
             <!-- IMAGE 8 -->
             <div class="company-image-container">
+
                 <img
                     src="https://uc1d3cdfc0a5f37af8aee35d0df9.previews.dropboxusercontent.com/p/thumb/ADLwRFrNZCDM5lKVwp4RXwhOvd9Hd4VfNOd7qv-EQoyh7Mo5jNsHwBdL92s8Sv3JxtRh491_ArVhQww88RbfJdXampI5lOwrDVM3b0v2G-sqHH06Mk291WEKI8q9DC0bOg26C6h709D-OvXoVNXMKxn7Julsly73j_zNlZS0zuVFOPpMGNS9zLZRbptFJ3JaUH8lDonZ8jhNcCQToljw_94KMte4CexZdQkGpU4QntsR9Uxm7EgimABwWe6tRy-4eeE2IGRBr3ZTWZktm8KsDhhRC_3SVgb1A0iQEIFzbwMKUfvsSkIGhqzqCyH26RUL192_tso9ClbVJZzG_G0xgjLh1hIKKR6lxAIAJzl_PxAvKymJKolTvgybWWIxj_7CC-4/p.jpeg?is_prewarmed=true"
                     alt="Proton Holdings"
                 >
+
             </div>
 
-            <!-- SEARCH BAR -->
+
+            <!-- SEARCH -->
             <div class="search-container">
+
                 <input
                     type="text"
                     placeholder="I'm searching for..."
@@ -520,43 +625,270 @@
                 <button class="search-button" aria-label="Search">
                     <span class="search-icon"></span>
                 </button>
+
             </div>
 
         </div>
 
 
-        <!-- CATEGORY ROW -->
+        <!-- =========================
+             CATEGORY NAVIGATION
+        ========================= -->
+
         <div class="category-row">
 
-            <a href="#" class="category">
-                Fresh Produce
-                <span class="category-arrow">›</span>
-            </a>
 
-            <a href="#" class="category">
-                Frozen Chilled
-                <span class="category-arrow">›</span>
-            </a>
+            <!-- FRESH PRODUCE -->
+            <div class="category-item">
 
-            <a href="#" class="category">
-                Grocery
-                <span class="category-arrow">›</span>
-            </a>
+                <a href="#" class="category">
+                    Fresh Produce
+                    <span class="category-arrow"></span>
+                </a>
 
-            <a href="#" class="category">
-                Drinks
-                <span class="category-arrow">›</span>
-            </a>
+                <div class="dropdown-menu">
 
-            <a href="#" class="category">
-                Alcohol
-                <span class="category-arrow">›</span>
-            </a>
+                    <a href="https://www.cyprofood.com/collections/fruits">
+                        Fruits
+                    </a>
 
-            <a href="#" class="category">
-                Non-Food
-                <span class="category-arrow">›</span>
-            </a>
+                    <a href="https://www.cyprofood.com/collections/vegetables">
+                        Vegetables
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/fresh-herbs">
+                        Fresh Herbs
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/dry-fruit-nuts">
+                        Dry Fruit &amp; Nuts
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FROZEN -->
+            <div class="category-item">
+
+                <a href="#" class="category">
+                    Frozen
+                    <span class="category-arrow"></span>
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="https://www.cyprofood.com/collections/potato-chips">
+                        Potato &amp; Chips
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/frozen-bread-pizza-snacks">
+                        Bread &amp; Pizza &amp; Snacks
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/frozen-meat-poultry">
+                        Meat &amp; Poultry
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/frozen-pies-pastiries">
+                        Pies &amp; Pastiries
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/frozen-vegetable">
+                        Vegetable &amp; Fruit
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/frozen-seafood">
+                        Seafood
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/frozen-deserts">
+                        Deserts
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/ice-cream">
+                        Ice Cream
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/frozen-doner-1">
+                        Frozen Doner
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/other-frozen-products/Vegan">
+                        Other Frozen Products
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHILLED -->
+            <div class="category-item">
+
+                <a href="#" class="category">
+                    Chilled
+                    <span class="category-arrow"></span>
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="https://www.cyprofood.com/pages/about-us#">
+                        Dairy
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/charcuterie">
+                        Charcuterie
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/eggs">
+                        Eggs
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/meat-poultry">
+                        Meat &amp; Poultry
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- GROCERY -->
+            <div class="category-item">
+
+                <a href="#" class="category">
+                    Grocery
+                    <span class="category-arrow"></span>
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="https://www.cyprofood.com/collections/bakery">
+                        Bakery
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/charcuterie">
+                        Charcuterie
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/confectionery-snacks">
+                        Confectionery &amp; Snacks
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/dried-foods">
+                        Dried Foods
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/flour-mixes">
+                        Flour&amp;Mixes
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/pasta-noodles">
+                        Pasta &amp; Noodles
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/herbs-spices">
+                        Herbs &amp; Spices
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/jam-honey-spread">
+                        Jam &amp; Honey &amp; Spread
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/meze-olives">
+                        Olive &amp; Meze
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/veg-olive-oil">
+                        Oil
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/pickles-canned-foods">
+                        Pickles &amp; Canned Foods
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DRINKS -->
+            <div class="category-item">
+
+                <a href="#" class="category">
+                    Drinks
+                    <span class="category-arrow"></span>
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="https://www.cyprofood.com/pages/about-us#">
+                        Cold Beverages
+                    </a>
+
+                    <a href="https://www.cyprofood.com/pages/about-us#">
+                        Hot Drinks
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALCOHOL -->
+            <div class="category-item">
+
+                <a href="#" class="category">
+                    Alcohol
+                    <span class="category-arrow"></span>
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="https://www.cyprofood.com/collections/alcohol">
+                        Alcoholic Drinks
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- NON FOOD -->
+            <div class="category-item">
+
+                <a href="#" class="category">
+                    Non Food
+                    <span class="category-arrow"></span>
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="https://www.cyprofood.com/collections/cleaning-household">
+                        Cleaning &amp; Household
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/food-packaging">
+                        Food Packaging
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/bbq-charcoals-1">
+                        BBQ&amp;Charcoals
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/pet-foods">
+                        Pet Foods
+                    </a>
+
+                    <a href="https://www.cyprofood.com/collections/lightning">
+                        Lightning
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -568,31 +900,38 @@
 
         <div class="hero-layout">
 
+
             <!-- IMAGE 2 -->
             <div class="image-card">
+
                 <img
                     src="https://www.cyprofood.com/cdn/shop/files/cyprofood_DJI_0951.jpg?v=1739544425"
                     alt="Cyprofood outside"
                 >
+
             </div>
+
 
             <!-- IMAGE 3 -->
             <div class="image-card">
+
                 <img
                     src="https://www.cyprofood.com/cdn/shop/files/cyprofood_DJI_0952.jpg?v=1739544725"
                     alt="Cyprofood inside"
                 >
+
             </div>
+
 
             <!-- ABOUT -->
             <section class="about-section">
 
                 <h1>
-                    Cyprofood Cash & Carry - A Proton Holdings company
+                    Cyprofood Cash &amp; Carry - A Proton Holdings company
                 </h1>
 
                 <p>
-                    Established in 2007, Cyprofood Wholesale has grown to become a leading supplier in the wholesale and cash & carry sector, becoming an important part of Proton Holdings interests in the UK. With a 5,000m² facility, a fleet of 40 delivery vehicles, and a dedicated team of over 200 employees, we proudly serve supermarkets, grocery stores, restaurants, and all types of food service businesses.
+                    Established in 2007, Cyprofood Wholesale has grown to become a leading supplier in the wholesale and cash &amp; carry sector, becoming an important part of Proton Holdings interests in the UK. With a 5,000m² facility, a fleet of 40 delivery vehicles, and a dedicated team of over 200 employees, we proudly serve supermarkets, grocery stores, restaurants, and all types of food service businesses.
                 </p>
 
                 <p>
@@ -611,40 +950,64 @@
         <!-- FEATURES -->
         <div class="features">
 
+
             <!-- IMAGE 4 -->
             <div class="feature">
+
                 <img
                     src="https://www.cyprofood.com/cdn/shop/files/003-24-hours-support.png?v=1739532766"
                     alt="24/7 support"
                 >
-                <h3>Open 24/7</h3>
+
+                <h3>
+                    Open 24/7
+                </h3>
+
             </div>
+
 
             <!-- IMAGE 5 -->
             <div class="feature">
+
                 <img
                     src="https://www.cyprofood.com/cdn/shop/files/001-truck.png?v=1739532766"
                     alt="Free delivery"
                 >
-                <h3>Free Delivery</h3>
+
+                <h3>
+                    Free Delivery
+                </h3>
+
             </div>
+
 
             <!-- IMAGE 6 -->
             <div class="feature">
+
                 <img
                     src="https://www.cyprofood.com/cdn/shop/files/groceries.png?v=1739532889"
                     alt="Groceries"
                 >
-                <h3>10,000+ Products</h3>
+
+                <h3>
+                    10,000+ Products
+                </h3>
+
             </div>
+
 
             <!-- IMAGE 7 -->
             <div class="feature">
+
                 <img
                     src="https://www.cyprofood.com/cdn/shop/files/parking.png?v=1739533042"
                     alt="Parking"
                 >
-                <h3>Free Parking</h3>
+
+                <h3>
+                    Free Parking
+                </h3>
+
             </div>
 
         </div>
@@ -661,12 +1024,16 @@
 
         <div class="footer-divider"></div>
 
+
         <div class="footer-columns">
+
 
             <!-- SHOP -->
             <div class="footer-column">
 
-                <h3>Shop</h3>
+                <h3>
+                    Shop
+                </h3>
 
                 <a href="https://www.cyprofood.com/collections/vegetables">
                     Fresh Vegetables
@@ -694,7 +1061,9 @@
             <!-- ABOUT -->
             <div class="footer-column">
 
-                <h3>About</h3>
+                <h3>
+                    About
+                </h3>
 
                 <a href="https://www.cyprofood.com/pages/about-us">
                     About Us
@@ -722,7 +1091,9 @@
             <!-- INFORMATION -->
             <div class="footer-column">
 
-                <h3>Information</h3>
+                <h3>
+                    Information
+                </h3>
 
                 <a href="https://www.cyprofood.com/policies/terms-of-service">
                     Terms &amp; Conditions
@@ -758,6 +1129,7 @@
 
     <!-- TOP BAR ROTATION -->
     <script>
+
         const messageOne = document.getElementById("messageOne");
         const messageTwo = document.getElementById("messageTwo");
 
@@ -776,6 +1148,7 @@
             }
 
         }, 5000);
+
     </script>
 
 </body>
