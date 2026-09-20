@@ -12,6 +12,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -19,6 +20,7 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #222;
             background: #fff;
+            overflow-x: hidden;
         }
 
         /* =========================
@@ -69,6 +71,7 @@
             z-index: 1000;
             background: #fff;
             padding: 6px 0 0 0;
+            overflow: visible;
         }
 
         .navigation-area {
@@ -191,15 +194,17 @@
             gap: 38px;
             border-top: 1px solid #e5e5e5;
             position: relative;
-            z-index: 20;
+            z-index: 2000;
             overflow: visible;
+            flex-wrap: nowrap;
         }
 
         .category-item {
-            position: relative;
+            position: static;
             height: 54px;
             display: flex;
             align-items: center;
+            flex-shrink: 1;
         }
 
         .category {
@@ -239,11 +244,13 @@
         ========================= */
 
         .dropdown-menu {
-            position: absolute;
-            top: 51px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+
             width: 235px;
+            max-width: calc(100vw - 20px);
+
             background: #fff;
             border: 1px solid #e5e5e5;
             border-radius: 12px;
@@ -254,18 +261,21 @@
             visibility: hidden;
             pointer-events: none;
 
+            transform: translateY(-10px);
+
             transition:
                 opacity 0.25s ease,
                 transform 0.3s ease,
                 visibility 0.3s ease;
+
+            z-index: 99999;
         }
 
-        .category-item:hover .dropdown-menu,
-        .category-item:focus-within .dropdown-menu {
+        .dropdown-menu.open {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(0);
         }
 
         .dropdown-menu a {
@@ -429,8 +439,34 @@
         }
 
         /* =========================
-           MOBILE / SMALL WINDOW
+           SMALLER WINDOWS
         ========================= */
+
+        @media (max-width: 1100px) {
+
+            .navigation-area {
+                width: 92%;
+                gap: 18px;
+            }
+
+            .logo-container {
+                width: 180px;
+            }
+
+            .company-image-container {
+                width: 140px;
+            }
+
+            .category-row {
+                width: 92%;
+                gap: 20px;
+            }
+
+            .category {
+                font-size: 13px;
+                gap: 7px;
+            }
+        }
 
         @media (max-width: 900px) {
 
@@ -464,25 +500,19 @@
 
             .category-row {
                 width: 90%;
-                gap: 22px;
+                gap: 15px;
+                flex-wrap: nowrap;
                 overflow: visible;
-                justify-content: center;
-                flex-wrap: wrap;
-                height: auto;
             }
 
-            .category-item {
-                flex-shrink: 0;
+            .category {
+                font-size: 12px;
+                gap: 6px;
             }
 
-            .dropdown-menu {
-                left: 50%;
-                transform: translateX(-50%) translateY(-10px);
-            }
-
-            .category-item:hover .dropdown-menu,
-            .category-item:focus-within .dropdown-menu {
-                transform: translateX(-50%) translateY(0);
+            .category-arrow {
+                width: 7px;
+                height: 7px;
             }
 
             .main-content {
@@ -504,6 +534,23 @@
             .footer-columns {
                 grid-template-columns: 1fr;
                 gap: 35px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .category-row {
+                gap: 10px;
+            }
+
+            .category {
+                font-size: 11px;
+                gap: 5px;
+            }
+
+            .category-arrow {
+                width: 6px;
+                height: 6px;
             }
         }
 
@@ -536,11 +583,19 @@
             }
 
             .category-row {
-                width: 92%;
-                overflow: visible;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 22px;
+                width: 96%;
+                gap: 7px;
+                flex-wrap: nowrap;
+            }
+
+            .category {
+                font-size: 10px;
+                gap: 4px;
+            }
+
+            .category-arrow {
+                width: 6px;
+                height: 6px;
             }
 
             .main-content {
@@ -1151,6 +1206,53 @@
             }
 
         }, 5000);
+
+
+        /* =========================
+           DROPDOWN POSITIONING
+        ========================= */
+
+        const categoryItems = document.querySelectorAll(".category-item");
+
+        categoryItems.forEach(item => {
+
+            const category = item.querySelector(".category");
+            const dropdown = item.querySelector(".dropdown-menu");
+
+            category.addEventListener("mouseenter", () => {
+
+                const rect = category.getBoundingClientRect();
+
+                dropdown.classList.add("open");
+
+                const dropdownWidth = dropdown.offsetWidth;
+
+                let left = rect.left + (rect.width / 2) - (dropdownWidth / 2);
+
+                const minimumLeft = 10;
+                const maximumLeft = window.innerWidth - dropdownWidth - 10;
+
+                if (left < minimumLeft) {
+                    left = minimumLeft;
+                }
+
+                if (left > maximumLeft) {
+                    left = maximumLeft;
+                }
+
+                dropdown.style.left = left + "px";
+                dropdown.style.top = (rect.bottom + 1) + "px";
+
+            });
+
+
+            item.addEventListener("mouseleave", () => {
+
+                dropdown.classList.remove("open");
+
+            });
+
+        });
 
     </script>
 
